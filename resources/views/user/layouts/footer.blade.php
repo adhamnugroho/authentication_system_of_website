@@ -42,9 +42,13 @@
 <!-- copyright section start -->
 <div class="copyright_section">
     <div class="container">
-        <p class="copyright_text">Copyright 2019 All Right Reserved By.<a href="https://html.design"> Free html
-                Templates</p>
-        <p class="copyright_text">Disrtributed By. <a href="https://themewagon.com">ThemeWagon </a></p>
+        <p class="copyright_text">Copyright
+            <script>
+                document.write(new Date().getFullYear());
+            </script> All Right Reserved
+        </p>
+        <p class="copyright_text">Create And Published By. <a href="https://www.instagram.com/adhamnugroho_1/">Adham
+                Nugroho</a></p>
     </div>
 </div>
 <!-- copyright section end -->
