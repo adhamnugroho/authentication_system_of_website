@@ -81,8 +81,8 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to Cycles! 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
+              <h4 class="mb-2">Selamat Datang di Cycles! 👋</h4>
+              <p class="mb-4">Silahkan Log In terlebih dahulu </p>
 
               <form id="formAuthentication" class="mb-3" action="{{ route('postLogin') }}" method="POST">
 
@@ -103,9 +103,9 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
-                    <a href="auth-forgot-password-basic.html">
+                    {{-- <a href="auth-forgot-password-basic.html">
                       <small>Forgot Password?</small>
-                    </a>
+                    </a> --}}
                   </div>
                   <div class="input-group input-group-merge">
                     <input
