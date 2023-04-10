@@ -127,7 +127,7 @@
                   </div>
                 </div> --}}
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100 mb-5" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100 mb-5" type="submit" id="button-login">Sign in</button>
                 </div>
               </form>
 
@@ -209,6 +209,19 @@
                 })
             @endif
         @endif
+    </script>
+
+    <script>
+        document.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+
+                if (document.getElementById('username').value !== '' && document.getElementById(
+                        'password').value !== '') {
+
+                    document.getElementById('button-login').click();
+                }
+            }
+        });
     </script>
 
   </body>
