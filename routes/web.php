@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\User\DashboardController as userDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/dashboard', [DashboardController::class, 'main'])->name('adminDashboard');
 
-        
+        Route::get('/error-not-found', [MiscellaneousController::class, 'erorr'])->name('adminErorr');
     });
 
     Route::middleware('isUser')->group(function () {
