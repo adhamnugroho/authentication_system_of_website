@@ -1,5 +1,5 @@
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-     <a href="index.html" class="logo"><img src="{{ asset('template-user/images/logo.png') }}"></a>
+     <a href="{{ route('userDashboard') }}" class="logo"><img src="{{ asset('template-user/images/logo.png') }}"></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -7,32 +7,38 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
              <li class="nav-item active">
-                 <a class="nav-link" href="index.html">Home</a>
+                 <a class="nav-link" href="{{ route('userDashboard') }}">Home</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="about.html">About</a>
+                 <a class="nav-link" href="#about">About</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="cycle.html">Our Cycle</a>
+                 <a class="nav-link" href="#our_cycle">Our Cycle</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="shop.html">Shop</a>
+                 <a class="nav-link" href="#news">News</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="news.html">News</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="contact.html">Contact Us</a>
+                 <a class="nav-link" href="#contact">Contact Us</a>
              </li>
          </ul>
          <form class="form-inline my-2 my-lg-0">
              <div class="login_menu">
                  <ul>
-                     <li><a href="#">Login</a></li>
-                     <li><a href="#"><img src="{{ asset('template-user/images/trolly-icon.png') }}"></a>
-                     </li>
-                     <li><a href="#"><img src="{{ asset('template-user/images/search-icon.png') }}"></a>
-                     </li>
+
+                     @if (Auth::check())
+                         <li class="mt-2">{{ Auth::user()->nama_lengkap }}</li>
+                         </li>
+                         <li>
+                             <div class="cssbuttons-io-button" onclick="logout();">
+                                 <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                 <span>Logout</span>
+                             </div>
+                         </li>
+                     @else
+                         <li><a href="{{ route('login') }}">Login</a></li>
+                     @endif
+
                  </ul>
              </div>
              <div></div>

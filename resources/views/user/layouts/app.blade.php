@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('template-user/css/bootstrap.min.css') }}">
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template-user/css/style.css') }}">
+    <!-- button custom css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-user/css/button-custom.css') }}">
     <!-- Responsive-->
     <link rel="stylesheet" href="{{ asset('template-user/css/responsive.css') }}">
     <!-- fevicon -->
@@ -37,6 +39,13 @@
     <link rel="stylesoeet" href="{{ asset('template-user/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
         media="screen">
+
+    {{-- SweetAlert --}}
+    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
+
+    {{-- route javascript --}}
+    @routes
+
 </head>
 
 <body>
@@ -110,6 +119,23 @@
                 })
             @endif
         @endif
+
+        function logout() {
+
+            swal.fire({
+                icon: 'warning',
+                title: 'Anda Yakin Ingin Logout?',
+                showCancelButton: true,
+                cancelButtonText: 'Batal',
+                confirmButtonText: 'Yakin!',
+            }).then((result) => {
+
+                if (result.value) {
+
+                    window.location.replace("{{ route('logout') }}");
+                }
+            });
+        }
     </script>
 
     <script>

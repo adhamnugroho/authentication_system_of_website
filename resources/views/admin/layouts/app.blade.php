@@ -54,6 +54,13 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('template-admin/assets/js/config.js') }}"></script>
+
+    {{-- SweetAlert --}}
+    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
+
+    {{-- route javascript --}}
+    @routes
+    
   </head>
 
   <body>
@@ -91,7 +98,7 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-
+{{-- 
     <div class="buy-now">
       <a
         href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
@@ -99,7 +106,7 @@
         class="btn btn-danger btn-buy-now"
         >Upgrade to Pro</a
       >
-    </div>
+    </div> --}}
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -168,6 +175,23 @@
                 })
             @endif
         @endif
+
+        function logout() {
+
+            swal.fire({
+                icon: 'warning',
+                title: 'Anda Yakin Ingin Logout?',
+                showCancelButton: true,
+                cancelButtonText: 'Batal',
+                confirmButtonText: 'Yakin!',
+            }).then((result) => {
+
+                if (result.value) {
+
+                    window.location.replace("{{ route('logout') }}");
+                }
+            });
+        }
     </script>
 
     @yield('script')

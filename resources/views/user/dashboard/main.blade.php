@@ -3,7 +3,7 @@
 @section('content')
     <!-- header section end -->
     <!-- cycle section start -->
-    <div class="cycle_section layout_padding">
+    <div class="cycle_section layout_padding" id="our_cycle">
         <div class="container">
             <h1 class="cycle_taital">Our cycle</h1>
             <p class="cycle_text">It is a long established fact that a reader will be distracted by the </p>
@@ -77,7 +77,7 @@
     </div>
     <!-- cycle section end -->
     <!-- about section start -->
-    <div class="about_section layout_padding">
+    <div class="about_section layout_padding" id="about">
         <div class="container">
             <h1 class="about_taital">About Our cycle Store</h1>
             <p class="about_text">It is a long established fact that a reader will be distracted by the readable
@@ -92,7 +92,7 @@
     </div>
     <!-- about section end -->
     <!-- client section start -->
-    <div class="client_section layout_padding">
+    <div class="client_section layout_padding" id="say_customers">
         <div id="my_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -172,7 +172,7 @@
     </div>
     <!-- client section end -->
     <!-- news section start -->
-    <div class="news_section layout_padding">
+    <div class="news_section layout_padding" id="news">
         <div class="container">
             <h1 class="news_taital">News</h1>
             <p class="news_text">It is a long established fact that a reader will be distracted by the readable content
@@ -224,7 +224,7 @@
     </div>
     <!-- news section end -->
     <!-- contact section start -->
-    <div class="contact_section layout_padding">
+    <div class="contact_section layout_padding" id="contact">
         <div class="container">
             <div class="contact_main">
                 <h1 class="request_text">A Call Back</h1>

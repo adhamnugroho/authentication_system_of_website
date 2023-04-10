@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+
+use App\Http\Controllers\User\DashboardController as userDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,14 +18,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.layouts.app');
+    return redirect()->route('userDashboard');
 });
 
 Route::middleware('guest')->group(function () {
-    Route::get('login', [AuthController::class, 'login'])->name('login');
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');
 });
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'main'])->name('dashboardAdmin');
+
+    Route::middleware('isAdmin')->prefix('admin')->group(function () {
+
+        Route::get('/dashboard', [DashboardController::class, 'main'])->name('adminDashboard');
+
+        
+    });
+
+    Route::middleware('isUser')->group(function () {
+
+        Route::get('/dashboard', [userDashboardController::class, 'main'])->name('userDashboard');
+    });
+
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
