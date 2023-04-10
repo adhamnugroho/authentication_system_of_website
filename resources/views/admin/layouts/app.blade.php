@@ -15,6 +15,9 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
+    {{-- CSRF --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
@@ -119,5 +122,54 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    {{-- SweetAlert --}}
+    <script src="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+
+    <script>
+        // Template Toast dengan Sweet Alert
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3700,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+
+
+        @if (Session::has('status'))
+
+            @if (Session::get('status') == 'success')
+
+                Toast.fire({
+
+                    icon: '{{ Session::get('status') }}',
+                    title: '{{ Session::get('message') }}',
+                })
+            @else
+
+                Toast.fire({
+
+                    icon: '{{ Session::get('status') }}',
+                    title: '{{ Session::get('message') }}',
+                })
+            @endif
+        @endif
+    </script>
+
+    @yield('script')
   </body>
 </html>
