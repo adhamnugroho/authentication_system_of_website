@@ -19,7 +19,7 @@
                         <!-- /Logo -->
                         <h4 class="mb-2">Lupa Password? 🔒</h4>
                         <p class="mb-4">Masukkan email anda, dan anda akan diarahkan ke halaman reset password</p>
-                        <form id="formAuthentication" class="mb-3" action="{{ route('resetPassword') }}" method="POST">
+                        <form id="formAuthentication" class="mb-3" action="{{ route('resetPassword') }}" method="GET">
 
                             @csrf
 

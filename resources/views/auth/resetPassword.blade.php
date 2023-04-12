@@ -17,16 +17,35 @@
                             </a>
                         </div>
                         <!-- /Logo -->
-                        <h4 class="mb-2">Lupa Password? 🔒</h4>
-                        <p class="mb-4">Masukkan email anda, dan anda akan diarahkan ke halaman reset password</p>
-                        <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                        <h4 class="mb-2">Reset Password 🔑🔄</h4>
+                        <p class="mb-4">Masukkan password dengan benar pada kedua kolom!</p>
+                        <form id="formAuthentication" class="mb-3" action="{{ route('postResetPassword') }}"
+                            method="POST">
 
                             @csrf
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Masukkan email anda disini" autofocus required />
+                            <input type="hidden" name="email" value="{{ $email }}">
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="password">Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="password" class="form-control" name="password"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password" minlength="8" required />
+                                    <span class="input-group-text
+                                        cursor-pointer"><i
+                                            class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="password">Konfirmasi Password</label>
+                                <small class="text-right" id="checkInputInfo"></small>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="password-confirm" class="form-control" name="passwordConfirm"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password-confirm" minlength="8" onkeydown="checkInput();"
+                                        required />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
                             </div>
                             <button class="btn btn-primary d-grid w-100">Lanjut!</button>
                         </form>
@@ -42,4 +61,23 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        function checkInput(params) {
+            const password = document.getElementById("password");
+            const passwordConfirm = document.getElementById("password-confirm");
+            const checkInputInfo = document.getElementById("checkInputInfo");
+
+            let passwordValue = password.value;
+            let passwordConfirmValue = passwordConfirm.value;
+
+            if (passwordValue === passwordConfirmValue) {
+                checkInputInfo.innerHTML = "Sesuai";
+            } else {
+                checkInputInfo.innerHTML = "Belum-Sesuai";
+            }
+        }
+    </script>
 @endsection

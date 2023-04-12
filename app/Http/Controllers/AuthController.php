@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -72,6 +73,8 @@ class AuthController extends Controller
 
         try {
 
+            App::setLocale('id');
+
             $validatedDataRegister = $request->validate([
                 'nama_lengkap' => 'required',
                 'username' => 'required|unique:users|max:50',
@@ -127,19 +130,20 @@ class AuthController extends Controller
 
         try {
 
-            $validatedDataRegister = $request->validate([
-                'nama_lengkap' => 'required',
-                'username' => 'required|unique:users|max:50',
-                'email' => 'required|unique:users|email:rfc',
+            $users = Users::where('email', $request->email)->first();
+
+            $request->validate([
                 'password' => 'required|min:8',
             ]);
 
-            // Password, Status pengguna, & role
-            $validatedDataRegister['password'] = Hash::make($request->password);
-            $validatedDataRegister['status_pengguna'] = "Aktif";
-            $validatedDataRegister['role'] = "User";
+            if ($request->password != $request->passwordConfirm) {
 
-            Users::create($validatedDataRegister);
+                return back()->withInput()->with('status', 'error')->with('message', 'Data pada kedua kolom password tidak cocok!');
+            }
+
+            $validatedDataResetPassword['password'] = Hash::make($request->password);
+
+            $users->update($validatedDataResetPassword);
 
             return redirect()->route('login')->with('status', 'success')->with('message', 'Berhasil Mengganti Password');
         } catch (\Throwable $th) {
