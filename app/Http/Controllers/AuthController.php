@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -101,14 +103,14 @@ class AuthController extends Controller
 
     public function preForgotPassword(Request $request)
     {
-        // return $request->all();
 
         try {
 
+            // Mengkonfigurasi bahasa pesan error
+            App::setLocale('id');
+
             $request->validate([
-                'email' => 'required|exist:users',
-            ], [
-                'email.exist' => 'Data email tidak ditemukan pada sistem',
+                'email' => 'required|exists:users',
             ]);
 
             return view($this->directory . ".resetPassword", [
