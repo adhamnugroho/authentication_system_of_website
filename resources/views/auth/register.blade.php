@@ -28,26 +28,26 @@
                             <div class="mb-3">
                                 <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                                    placeholder="Masukkan nama lengkap anda disini" autocomplete="name" autofocus
-                                    required />
+                                    placeholder="Masukkan nama lengkap anda disini" autocomplete="name"
+                                    value="{{ old('nama_lengkap') }}" autofocus required />
                             </div>
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" name="username"
                                     placeholder="Masukkan username disini" autocomplete="username" maxlength="50"
-                                    required />
+                                    value="{{ old('username') }}" required />
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Enter your email" />
+                                    placeholder="Enter your email" value="{{ old('email') }}" required />
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Password</label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                        aria-describedby="password" minlength="8" required />
+                                        aria-describedby="password" minlength="8" value="{{ old('password') }}" required />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
@@ -56,8 +56,8 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
                                     <label class="form-check-label" for="terms-conditions">
-                                        I agree to
-                                        <a href="javascript:void(0);">privacy policy & terms</a>
+                                        Saya menyetujui untuk
+                                        <a href="javascript:void(0);">Syarat dan Ketentuan</a>
                                     </label>
                                 </div>
                             </div>
