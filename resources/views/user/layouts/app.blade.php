@@ -91,34 +91,34 @@
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 3700,
+            timer: 10000, //3700
             timerProgressBar: true,
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                toast.addEventListener('mouseleave', Swal.stopTimer)
             }
         });
 
 
 
-        // @if (Session::has('status'))
+        @if (Session::has('status'))
 
-        //     @if (Session::get('status') == 'success')
+            @if (Session::get('status') == 'success')
 
-        //         Toast.fire({
+                Toast.fire({
 
-        //             icon: '{{ Session::get('status') }}',
-        //             title: '{{ Session::get('message') }}',
-        //         })
-        //     @else
+                    icon: '{{ Session::get('status') }}',
+                    title: '{{ Session::get('message') }}',
+                })
+            @else
 
-        //         Toast.fire({
+                Toast.fire({
 
-        //             icon: '{{ Session::get('status') }}',
-        //             title: '{{ Session::get('message') }}',
-        //         })
-        //     @endif
-        // @endif
+                    icon: '{{ Session::get('status') }}',
+                    title: '{{ Session::get('message') }}',
+                })
+            @endif
+        @endif
 
         function logout() {
 
