@@ -23,14 +23,11 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
-        // return $request->all();
 
         $credentials = $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
-
-        $username = $credentials['username'];
 
         if (Auth::attempt($credentials)) {
 
@@ -38,7 +35,7 @@ class AuthController extends Controller
 
             return redirect()->route('adminDashboard')
                 ->with('status', 'success')
-                ->with('message', 'Selamat Datang ' . $username . '!');
+                ->with('message', 'Selamat Datang ' . $request->username . '!');
         }
 
         return back()
@@ -69,7 +66,6 @@ class AuthController extends Controller
 
     public function registerStore(Request $request)
     {
-        // return $request->all();
 
         try {
 
