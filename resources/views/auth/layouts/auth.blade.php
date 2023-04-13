@@ -43,6 +43,8 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    {{-- SweetAlert --}}
+    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
 
     <!-- Page CSS -->
     <!-- Page -->
@@ -53,9 +55,6 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('template-admin/assets/js/config.js') }}"></script>
-
-    {{-- SweetAlert --}}
-    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
 
     {{-- route javascript --}}
     @routes

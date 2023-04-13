@@ -37,14 +37,14 @@
                                 </div>
                             </div>
                             <div class="mb-3 form-password-toggle">
-                                <label class="form-label" for="password">Konfirmasi Password</label>
-                                <small class="text-right" id="checkInputInfo"></small>
+                                <div class="d-flex justify-content-between">
+                                    <label class="form-label" for="password-confirm">Konfirmasi Password</label>
+                                    <small class="text-right" id="checkInputInfo"></small>
+                                </div>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password-confirm" class="form-control" name="passwordConfirm"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                        aria-describedby="password-confirm" minlength="8" onkeydown="checkInput();"
-                                        required />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                        aria-describedby="password-confirm" minlength="8" required />
                                 </div>
                             </div>
                             <button class="btn btn-primary d-grid w-100">Lanjut!</button>
@@ -65,19 +65,37 @@
 
 @section('script')
     <script>
-        function checkInput(params) {
+        const passwordConfirm = document.getElementById("password-confirm");
+
+        // front end validation input password
+        passwordConfirm.addEventListener('keyup', () => {
             const password = document.getElementById("password");
-            const passwordConfirm = document.getElementById("password-confirm");
             const checkInputInfo = document.getElementById("checkInputInfo");
 
             let passwordValue = password.value;
             let passwordConfirmValue = passwordConfirm.value;
 
-            if (passwordValue === passwordConfirmValue) {
+            if (passwordValue != "" && passwordValue.length >= 8) {
+                if (passwordValue !== passwordConfirmValue) {
+
+                    checkInputInfo.innerHTML = "Belum-Sesuai";
+
+                    checkInputInfo.classList.remove("text-success");
+                    checkInputInfo.classList.add("text-danger");
+
+                    passwordConfirm.classList.remove("border-success");
+                    passwordConfirm.classList.add("border-danger");
+
+                    return;
+                }
+
                 checkInputInfo.innerHTML = "Sesuai";
-            } else {
-                checkInputInfo.innerHTML = "Belum-Sesuai";
+                checkInputInfo.classList.remove("text-danger");
+                checkInputInfo.classList.add("text-success");
+
+                passwordConfirm.classList.remove("border-danger");
+                passwordConfirm.classList.add("border-success");
             }
-        }
+        });
     </script>
 @endsection
