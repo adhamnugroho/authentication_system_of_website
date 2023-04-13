@@ -66,9 +66,10 @@
 @section('script')
     <script>
         const passwordConfirm = document.getElementById("password-confirm");
-        passwordConfirm.onpaste = (e) => e.preventDefault();
+        passwordConfirm.onpaste = (event) => event.preventDefault();
 
         const password = document.getElementById("password");
+        password.oncopy = (event) => event.preventDefault();
 
         // front end validation input password
         passwordConfirm.addEventListener('keyup', () => {
