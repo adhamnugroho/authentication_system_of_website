@@ -66,10 +66,12 @@
 @section('script')
     <script>
         const passwordConfirm = document.getElementById("password-confirm");
+        passwordConfirm.onpaste = (e) => e.preventDefault();
+
+        const password = document.getElementById("password");
 
         // front end validation input password
         passwordConfirm.addEventListener('keyup', () => {
-            const password = document.getElementById("password");
             const checkInputInfo = document.getElementById("checkInputInfo");
 
             let passwordValue = password.value;
