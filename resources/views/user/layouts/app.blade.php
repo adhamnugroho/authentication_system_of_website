@@ -14,10 +14,20 @@
     {{-- CSRF --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Cycle</title>
+    <title>Cycle | {{ $judul }}</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('template-user/images/favicon_io/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ asset('template-user/images/favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('template-user/images/favicon_io/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('template-user/images/favicon_io/site.webmanifest') }}">
+
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template-user/css/bootstrap.min.css') }}">
     <!-- style css -->
@@ -41,7 +51,8 @@
         media="screen">
 
     {{-- SweetAlert --}}
-    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
 
     {{-- route javascript --}}
     @routes
