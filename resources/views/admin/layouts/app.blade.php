@@ -59,7 +59,7 @@
     <script src="{{ asset('template-admin/assets/js/config.js') }}"></script>
 
     {{-- SweetAlert --}}
-    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.css') }}">
 
     {{-- route javascript --}}
     @routes

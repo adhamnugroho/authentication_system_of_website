@@ -51,8 +51,7 @@
         media="screen">
 
     {{-- SweetAlert --}}
-    <link rel="stylesheet"
-        href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.css') }}">
 
     {{-- route javascript --}}
     @routes
@@ -102,7 +101,7 @@
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 10000, //3700
+            timer: 3700, //3700
             timerProgressBar: true,
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
