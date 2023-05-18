@@ -52,11 +52,11 @@
     "perfect-scrollbar": "~1.5.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.7.7",
-    "@babel/plugin-proposal-object-rest-spread": "~7.7.7",
-    "@babel/plugin-transform-destructuring": "~7.7.4",
-    "@babel/plugin-transform-template-literals": "~7.7.4",
-    "@babel/preset-env": "~7.7.7",
+    "@babel/core": "~7.21.0",
+    "@babel/plugin-proposal-object-rest-spread": "~7.20.0",
+    "@babel/plugin-transform-destructuring": "~7.21.0",
+    "@babel/plugin-transform-template-literals": "~7.18.0",
+    "@babel/preset-env": "~7.21.0",
     "ansi-colors": "~4.1.1",
     "babel-loader": "~8.3.0",
     "browser-sync": "^2.26.7",
