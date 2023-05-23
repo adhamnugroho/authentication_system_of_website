@@ -3001,32 +3001,6 @@ es-abstract@^1.19.0, es-abstract@^1.20.4:
     unbox-primitive "^1.0.2"
     which-typed-array "^1.1.9"
 
-es-abstract@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.19.1.tgz#d4885796876916959de78edaa0df456627115ec3"
-  integrity sha512-2vJ6tjA/UfqLm2MPs7jxVybLoB8i1t1Jd9R3kISld20sIxPcTbLuggQOUxeWeAvIUkduv/CfMjuh4WmiXr2v9w==
-  dependencies:
-    call-bind "^1.0.2"
-    es-to-primitive "^1.2.1"
-    function-bind "^1.1.1"
-    get-intrinsic "^1.1.1"
-    get-symbol-description "^1.0.0"
-    has "^1.0.3"
-    has-symbols "^1.0.2"
-    internal-slot "^1.0.3"
-    is-callable "^1.2.4"
-    is-negative-zero "^2.0.1"
-    is-regex "^1.1.4"
-    is-shared-array-buffer "^1.0.1"
-    is-string "^1.0.7"
-    is-weakref "^1.0.1"
-    object-inspect "^1.11.0"
-    object-keys "^1.1.1"
-    object.assign "^4.1.2"
-    string.prototype.trimend "^1.0.4"
-    string.prototype.trimstart "^1.0.4"
-    unbox-primitive "^1.0.1"
-
 es-set-tostringtag@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/es-set-tostringtag/-/es-set-tostringtag-2.0.1.tgz#338d502f6f674301d710b80c8592de8a15f09cd8"
@@ -3111,14 +3085,15 @@ escape-string-regexp@^1.0.3, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
 
-eslint-config-airbnb-base@^14.2.1:
-  version "14.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.2.1.tgz#8a2eb38455dc5a312550193b319cdaeef042cd1e"
-  integrity sha512-GOrQyDtVEc1Xy20U7vsB2yAoB4nBlfH5HZJeatRXHleO+OS5Ot+MWij4Dpltw4/DyIkqUfqz1epfhVR5XWWQPA==
+eslint-config-airbnb-base@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-15.0.0.tgz#6b09add90ac79c2f8d723a2580e07f3925afd236"
+  integrity sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==
   dependencies:
     confusing-browser-globals "^1.0.10"
     object.assign "^4.1.2"
-    object.entries "^1.1.2"
+    object.entries "^1.1.5"
+    semver "^6.3.0"
 
 eslint-config-prettier@^8.0.0:
   version "8.8.0"
@@ -4430,7 +4405,7 @@ inquirer@^7.0.0:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
-internal-slot@^1.0.3, internal-slot@^1.0.5:
+internal-slot@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/internal-slot/-/internal-slot-1.0.5.tgz#f2a2ee21f668f8627a4667f309dc0f4fb6674986"
   integrity sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ==
@@ -4526,7 +4501,7 @@ is-buffer@^1.1.5:
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-callable@^1.1.3, is-callable@^1.1.4, is-callable@^1.2.4, is-callable@^1.2.7:
+is-callable@^1.1.3, is-callable@^1.1.4, is-callable@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.7.tgz#3bc2a85ea742d9e36205dcacdd72ca1fdc51b055"
   integrity sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==
@@ -4637,7 +4612,7 @@ is-negated-glob@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-negated-glob/-/is-negated-glob-1.0.0.tgz#6910bca5da8c95e784b5751b976cf5a10fee36d2"
   integrity sha1-aRC8pdqMleeEtXUbl2z1oQ/uNtI=
 
-is-negative-zero@^2.0.1, is-negative-zero@^2.0.2:
+is-negative-zero@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/is-negative-zero/-/is-negative-zero-2.0.2.tgz#7bf6f03a28003b8b3965de3ac26f664d765f3150"
   integrity sha512-dqJvarLawXsFbNDeJW7zAz8ItJ9cd28YufuuFzh0G8pNHjJMnY08Dv7sYX2uF5UpQOwieAeOExEYAWWfu7ZZUA==
@@ -4715,7 +4690,7 @@ is-relative@^1.0.0:
   dependencies:
     is-unc-path "^1.0.0"
 
-is-shared-array-buffer@^1.0.1, is-shared-array-buffer@^1.0.2:
+is-shared-array-buffer@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-shared-array-buffer/-/is-shared-array-buffer-1.0.2.tgz#8f259c573b60b6a32d4058a1a07430c0a7344c79"
   integrity sha512-sqN2UDu1/0y6uvXyStCOzyhAjCSlHceFoMKJW8W9EU9cvic/QdsZ0kEU93HEy3IUEFZIiH/3w+AH/UQbPHNdhA==
@@ -4764,7 +4739,7 @@ is-valid-glob@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-valid-glob/-/is-valid-glob-1.0.0.tgz#29bf3eff701be2d4d315dbacc39bc39fe8f601aa"
   integrity sha1-Kb8+/3Ab4tTTFdusw5vDn+j2Aao=
 
-is-weakref@^1.0.1, is-weakref@^1.0.2:
+is-weakref@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-weakref/-/is-weakref-1.0.2.tgz#9529f383a9338205e89765e0392efc2f100f06f2"
   integrity sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==
@@ -5573,7 +5548,7 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
-object-inspect@^1.11.0, object-inspect@^1.12.3, object-inspect@^1.9.0:
+object-inspect@^1.12.3, object-inspect@^1.9.0:
   version "1.12.3"
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.12.3.tgz#ba62dffd67ee256c8c086dfae69e016cd1f198b9"
   integrity sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==
@@ -5620,14 +5595,14 @@ object.defaults@^1.0.0, object.defaults@^1.1.0:
     for-own "^1.0.0"
     isobject "^3.0.0"
 
-object.entries@^1.1.2:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/object.entries/-/object.entries-1.1.5.tgz#e1acdd17c4de2cd96d5a08487cfb9db84d881861"
-  integrity sha512-TyxmjUoZggd4OrrU1W66FMDG6CuqJxsFvymeyXI51+vQLN67zYfZseptRge703kKQdo4uccgAKebXFcRCzk4+g==
+object.entries@^1.1.5:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/object.entries/-/object.entries-1.1.6.tgz#9737d0e5b8291edd340a3e3264bb8a3b00d5fa23"
+  integrity sha512-leTPzo4Zvg3pmbQ3rDK69Rl8GQvIqMWubrkxONG9/ojtFE2rD9fjMKfSI5BxW3osRH1m6VdzmqK8oAY9aT4x5w==
   dependencies:
     call-bind "^1.0.2"
-    define-properties "^1.1.3"
-    es-abstract "^1.19.1"
+    define-properties "^1.1.4"
+    es-abstract "^1.20.4"
 
 object.map@^1.0.0:
   version "1.0.1"
@@ -7215,7 +7190,7 @@ string.prototype.trim@^1.2.7:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-string.prototype.trimend@^1.0.4, string.prototype.trimend@^1.0.6:
+string.prototype.trimend@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/string.prototype.trimend/-/string.prototype.trimend-1.0.6.tgz#c4a27fa026d979d79c04f17397f250a462944533"
   integrity sha512-JySq+4mrPf9EsDBEDYMOb/lM7XQLulwg5R/m1r0PXEFqrV0qHvl58sdTilSXtKOflCsK2E8jxf+GKC0T07RWwQ==
@@ -7224,7 +7199,7 @@ string.prototype.trimend@^1.0.4, string.prototype.trimend@^1.0.6:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-string.prototype.trimstart@^1.0.4, string.prototype.trimstart@^1.0.6:
+string.prototype.trimstart@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/string.prototype.trimstart/-/string.prototype.trimstart-1.0.6.tgz#e90ab66aa8e4007d92ef591bbf3cd422c56bdcf4"
   integrity sha512-omqjMDaY92pbn5HOX7f9IccLA+U1tA9GvtU4JrodiXFfYB7jPzzHpRzpglLAjtUV6bB557zwClJezTqnAiYnQA==
@@ -7682,7 +7657,7 @@ uglifyjs-webpack-plugin@~2.2.0:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-unbox-primitive@^1.0.1, unbox-primitive@^1.0.2:
+unbox-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"
   integrity sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==
