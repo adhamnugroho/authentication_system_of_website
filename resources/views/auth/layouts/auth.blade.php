@@ -92,6 +92,9 @@
     {{-- SweetAlert --}}
     <script src="{{ asset('template-admin/assets/vendor/libs/sweetalert2/dist/sweetalert2.min.js') }}"></script>
 
+    {{-- Google Client Library --}}
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <script>
         $.ajaxSetup({
             headers: {

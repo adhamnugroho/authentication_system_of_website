@@ -51,11 +51,22 @@
                   </div>
                 </div> --}}
                             <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100 mb-5" type="submit" id="button-login">Log
+                                <button class="btn btn-primary d-grid w-100 mb-4" type="submit" id="button-login">Log
                                     in</button>
                             </div>
                         </form>
+                        <div class="ps-2 pe-2 mb-3">
+                            {{-- <p></p> --}}
+                            <div id="g_id_onload"
+                                data-client_id="940276537587-ovch5ql7t9oitqlnh32ep9tvoigatpqt.apps.googleusercontent.com"
+                                data-context="signin" data-ux_mode="popup" data-callback="doLogin()" data-nonce=""
+                                data-itp_support="true">
+                            </div>
 
+                            <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline"
+                                data-text="signin_with" data-size="large" data-logo_alignment="left">
+                            </div>
+                        </div>
                         <p class="text-center">
                             <span>Belum mempunyai akun?</span>
                             <a href="{{ route('registrationAccount') }}">
